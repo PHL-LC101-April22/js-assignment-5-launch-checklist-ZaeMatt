@@ -13,12 +13,25 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                     <li>Number of Moons: </li>
                 </ol>
                 <img src="">
-   */
+  </img> */
+  let pilotValue = document.querySelector("input[name-pilotName]")
+  let coPilotValue = document.querySelector("input[name-copilotName]")
+  let fuelLevel = document.querySelector("input[name-fuelLevel]")
+  let cargoMassValue = document.querySelector("input[name-cargoMassValue]")
+
+  if(pilotValue ==="" && copilotValue === "")
 }
 
 function validateInput(testInput) {
+    if (testInput isNaN("")) {
+        return "Empty";
+        if (isNaN(testInput) ) {
+            return "Not a Number";
+
+        } else return "Is a Number";
+    }
    
-}
+
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    
