@@ -14,18 +14,18 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                 </ol>
                 <img src="">
   </img> */
-  let pilotValue = document.querySelector("input[name-pilotName]")
-  let coPilotValue = document.querySelector("input[name-copilotName]")
-  let fuelLevel = document.querySelector("input[name-fuelLevel]")
-  let cargoMassValue = document.querySelector("input[name-cargoMassValue]")
+  let pilotValue = document.querySelector("input[name-pilotName]").value;
+  let coPilotValue = document.querySelector("input[name-copilotName]").value;
+  let fuelLevel = document.querySelector("input[name-fuelLevel]").value;
+  let cargoMassValue = document.querySelector("input[name-cargoMassValue]").value;
 
-  if(pilotValue ==="" && copilotValue === "")
+  if(pilotValue === "" && copilotValue === "")
 }
 
 function validateInput(testInput) {
-    if (testInput isNaN("")) {
+    if (testInput === "") {
         return "Empty";
-        if (isNaN(testInput) ) {
+        if ( isNaN(testInput) ) {
             return "Not a Number";
 
         } else return "Is a Number";
