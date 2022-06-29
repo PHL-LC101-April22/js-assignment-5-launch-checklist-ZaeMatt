@@ -20,7 +20,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
   let cargoMassValue = document.querySelector("input[name-cargoMassValue]").value;
 
   if(pilotValue === "" && copilotValue === "")
-};
+}
 
 function validateInput(testInput) {
     if (testInput === "") {
