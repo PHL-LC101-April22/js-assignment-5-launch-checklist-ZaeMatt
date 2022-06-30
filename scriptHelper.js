@@ -26,6 +26,9 @@ function validateInput(testInput) {
 
     } else return "Is a Number";
 
+    if (fuelLevel ==> 10000) {
+        return visible 
+    }
 }
 
 
@@ -41,6 +44,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
  console.log(cargoLevel);
  
 }
+
+`pilot is ${pilotStatus} and copilot is ${copilotStatus}`
+
+
 
 async function myFetch() {
     let planetsReturned;
