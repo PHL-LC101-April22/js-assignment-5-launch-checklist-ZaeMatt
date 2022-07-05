@@ -27,7 +27,7 @@ function validateInput(testInput) {
     } else return "Is a Number";
 
     if (fuelLevel ==> 10000) {
-        return visible 
+        return visible
     }
 }
 
@@ -43,10 +43,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
  console.log(fuelLevel);
  console.log(cargoLevel);
  
+
+
+document.getElementbyID("pilotStatus").innerHTML = `pilot is ${pilotStatus} and copilot is ${copilotStatus}`
+if (validatInput(fuelLevel) < 10000 faultyItems = visible) alert("Not enough fuel for the journey");
+document.getElementbyID(launchStatus).innerHTML ="Shuttle not ready for launch", color: black;
 }
-
-`pilot is ${pilotStatus} and copilot is ${copilotStatus}`
-
 
 
 async function myFetch() {
