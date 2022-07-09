@@ -44,10 +44,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
  console.log(cargoLevel);
  
 
-
-document.getElementbyID("pilotStatus").innerHTML = `pilot is ${pilotStatus} and copilot is ${copilotStatus}`
-if (validatInput(fuelLevel) >= 10000 (faultyItems = visible) alert("Not enough fuel for the journey"));
-document.getElementbyID(launchStatus).innerHTML ="Shuttle not ready for launch", color: black;
 }
 
 
