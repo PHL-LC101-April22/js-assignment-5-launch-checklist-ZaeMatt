@@ -1,13 +1,15 @@
 // Write your JavaScript code here!
 
-const { pickPlanet, addDestinationInfo } = require("./scriptHelper");
+const { pickPlanet, addDestinationInfo, validateInput } = require("./scriptHelper");
 
-//const { formSubmission } = require("./scriptHelper");
+const { formSubmission } = require("./scriptHelper");
 
 window.addEventListener("load", function () {
     let form = document.querySelector("form");
     form.addEventListener("submit", function (event) {
         event.preventDefault()
+        event.stopPropagation()
+
         let pilotValue = document.querySelector("input[name=pilotName]").value;
         let coPilotValue = document.querySelector("input[name=copilotName]").value;
         let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
@@ -24,9 +26,10 @@ window.addEventListener("load", function () {
         console.log(faultyItems);
         console.log(pilotStatus);
         console.log(missionTarget);
+    })
     
         
-    formSubmission(document, list, pilotValue, coPilotValue, fuelLevel, cargoMassValue);
+    formSubmission(document, list, pilotValue, coPilotValue, fuelLevel, cargoMassValue); 
        // if (pilotValue === "" && coPilotValue === "")
        // alert("All fields are required");
 
@@ -53,7 +56,7 @@ window.addEventListener("load", function () {
         }
         if (cargoMass > 10000) {
             ready = false;
-            cargoStatus.innerHTML = 'Too much mass for the shuttle to take off';
+            cargoStatus.innerHTML = 'Too much weight for the shuttle to take off';
         } else {
             cargoStatus.innerHTML = 'Cargo mass low enough for launch';
         }
@@ -69,9 +72,9 @@ window.addEventListener("load", function () {
         }
 
     }
+    return validateInput();
+});
 
-});
-});
 
 
 function retrieveData() {

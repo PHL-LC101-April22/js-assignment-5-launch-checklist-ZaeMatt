@@ -37,6 +37,10 @@ console.log(imageUrl);
 
 
 function validateInput(testInput) {
+
+    document.addEventListener("submit", function (event) {
+        event.preventDefault();
+  
     if (testInput === "") {
         return "Empty";
     }
@@ -45,7 +49,7 @@ function validateInput(testInput) {
 
     } else return "Is a Number";
 
-}
+})
 
 
 
@@ -54,35 +58,38 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (validateInput(copilot) === 'Empty') alert("All fields are required");
     if (validateInput(fuelLevel) === 'Not a Number') alert("This field is required to be a Number");
     if (validateInput(cargoLevel) === 'Not a Number') alert("This field is required to be a Number");
-    if (fuelLevel ==> 10000) {
-        return visible;
-    }
+    
+        
+    
     console.log(pilot);
     console.log(copilot);
     console.log(fuelLevel);
     console.log(cargoLevel);
 
+return formSubmission(visible); 
 
+    }
 }
 
 
 async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch(file:///Users/zaematthews/Git-Exercises/js-assignment-5-launch-checklist-ZaeMatt/index.html).then(function (response.json) {
-    );
-
+    planetsReturned = await fetch('https: //handlers.education.launchcode.org/static/planets.json');
+    
     return response.json();
 }
 
-function pickPlanet(planets:[listedPlanets]) {
-    let planets = list 
+function pickPlanet(planets) {
+    let planets = 6 
     let planetIndex = Math.floor(Math.random([0, 1]))
     
 
     console.log(listedPlanets[planetIndex]);
-
-    return planets
+    addDestinationInfo();
+    validateInput();
+    return 
+    
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
