@@ -15,6 +15,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                  <img src="">
    </img> */
   
+   document.getElementById(addDestinationInfo).innerHTML 
 }
 
 function validateInput(testInput) {
@@ -26,9 +27,6 @@ function validateInput(testInput) {
 
     } else return "Is a Number";
 
-    if (fuelLevel ==> 10000) {
-        return visible
-    }
 }
 
 
@@ -38,6 +36,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
  if ( validateInput(copilot) === 'Empty')alert("All fields are required");
  if ( validateInput(fuelLevel) === 'Not a Number')alert("This field is required to be a Number");
  if ( validateInput(cargoLevel) === 'Not a Number')alert("This field is required to be a Number");
+ if (fuelLevel ==> 10000) {
+    return visible;
+ }
  console.log(pilot);
  console.log(copilot);
  console.log(fuelLevel);
@@ -50,13 +51,16 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch().then(function (response) {
-    });
+    planetsReturned = await fetch(file:///Users/zaematthews/Git-Exercises/js-assignment-5-launch-checklist-ZaeMatt/index.html).then(function (response.json) {
+    );
 
     return planetsReturned;
 }
 
 function pickPlanet(planets) {
+   let planetIndex = Math.floor(Math.random([0,1]))
+   return 
+   console.log(listedPlantes[planetIndex]);
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
