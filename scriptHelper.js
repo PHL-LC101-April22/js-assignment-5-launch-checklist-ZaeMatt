@@ -3,16 +3,24 @@ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
-    
- let missionDestination = document.getElementbyId("MissionDestination");
- let name = document.getElementById("name");
- let diameter = document.getElementById("diameter");
- let star = document.getElementById("star");
- let distance = document.getElementById("distance");
- let moons = getElementById("moons");
- let imageUrl = getElementById("imageUrl");
-console.log(missionDestination);
 
+document.getElementById(addDestinationInfo).innerHTML
+document.getElementbyId(MissionDestination);
+document.getElementById(name).innerHTML;
+document.getElementById(diameter).innerHTML;
+document.getElementById(star).innerHTML;
+document.getElementById(distance).innerHTML;
+document.getElementById(moons).innerHTML;
+document.getElementById(imageUrl).innerHTML;
+
+console.log(missionDestination);
+console.log(name);
+console.log(diameter);
+console.log(star);
+console.log(distance);
+console.log(moons);
+console.log(imageUrl);
+}
 
 // <h2> Mission Destination </h2>
 //<ol>
@@ -25,8 +33,8 @@ console.log(missionDestination);
 // <img src = "">
 // </img * /
 
-    document.getElementById(addDestinationInfo).innerHTML
-}
+
+
 
 function validateInput(testInput) {
     if (testInput === "") {
@@ -64,13 +72,15 @@ async function myFetch() {
     planetsReturned = await fetch(file:///Users/zaematthews/Git-Exercises/js-assignment-5-launch-checklist-ZaeMatt/index.html).then(function (response.json) {
     );
 
-    return Response.json;
+    return response.json();
 }
 
-function pickPlanet(planets) {
+function pickPlanet(planets:[listedPlanets]) {
+    let planets = list 
     let planetIndex = Math.floor(Math.random([0, 1]))
+    
 
-    console.log(listedPlantes[planetIndex]);
+    console.log(listedPlanets[planetIndex]);
 
     return planets
 }

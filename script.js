@@ -24,7 +24,9 @@ window.addEventListener("load", function () {
         console.log(faultyItems);
         console.log(pilotStatus);
         console.log(missionTarget);
-        formSubmission(document, list, pilotValue, coPilotValue, fuelLevel, cargoMassValue);
+    
+        
+    formSubmission(document, list, pilotValue, coPilotValue, fuelLevel, cargoMassValue);
        // if (pilotValue === "" && coPilotValue === "")
        // alert("All fields are required");
 
@@ -86,10 +88,8 @@ function retrieveData() {
     }).then(function () {
         console.log(listedPlanets);
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-       console.log(forSubmission());
+       console.log(formSubmission());
        console.log(pickPlanet());
        console.log(addDestinationInfo());
     })
 
-
-});
