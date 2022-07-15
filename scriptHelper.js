@@ -111,6 +111,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 function pickPlanet(planets) { 
     let index = Math.floor(Math.random()* planets.length)
     return planets[index];
+
 }
     
 
