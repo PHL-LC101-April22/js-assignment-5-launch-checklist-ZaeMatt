@@ -15,7 +15,7 @@ window.addEventListener("load", function () {
         
 
         
-        formSubmission(pilotValue, coPilotValue, fuelLevel, cargoMassValue);
+        (formSubmission(pilotValue, coPilotValue, fuelLevel, cargoMassValue));
      } )})
     
         
@@ -39,28 +39,7 @@ window.addEventListener("load", function () {
         document.getElementById('copilotStatus').innerHTML = `Co-pilot ${ copilotName + ' ' }Ready`
 
     }
-    fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) { 
-        response.json().then(function(json){ 
-           const missionTarget = document.getElementById('missionTarget'); 
-           const index = Math.floor(Math.random() * json.length - 1); 
-           missionTarget.innerHTML = ` 
-           <ol> 
-           <li>Name: ${json[index].name}</li> 
-           <li>Diameter: ${json[index].diameter}</li> 
-           <li>Star: ${json[index].star}</li> 
-           <li>Distance from Earth: ${json[index].distance}</li> 
-           <li>Number of Moons: ${json[index].moons}</li> 
-           </ol> 
-           <img src="${json[index].image}"> 
-           `; 
-        }); 
-        preventDefault();
-    }); 
-
-      
- 
-
-
+    
     
    let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
