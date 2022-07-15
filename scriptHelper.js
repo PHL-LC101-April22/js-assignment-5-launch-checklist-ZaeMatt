@@ -6,17 +6,25 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     // Here is the HTML formatting for our mission target div.
 
     let main = document.getElementById('missionTarget');
-    main.innerHTML = ` 
-                 <h2>Mission Destination</h2>
+    const url = "https://handlers.education.launchcode.org/static/planets.json";
+    
+           
+    fetch(url).then(function (response) {
+        response.json().then(function (json) {
+        let index = Math.floor(Math.random() * (json.length));
+        let planet = json[index];
+    })
+    
+   main.innerHTML = `<h2>Mission Destination</h2>
                  <ol>
-                     <li>Name: ${name} </li>
-                     <li>Diameter: ${diameter}</li>
-                     <li>Star: ${star}</li>
-                     <li>Distance from Earth: ${distance} </li>
-                     <li>Number of Moons: ${moons}</li>
+                     <li>Name: ${planet.name} </li>
+                     <li>Diameter: ${planet.diameter}</li>
+                     <li>Star: ${planet.star}</li>
+                     <li>Distance from Earth: ${planet.distance} </li>
+                     <li>Number of Moons: ${planet.moons}</li>
                  </ol>
-                 <img src="${image}">`;
- 
+                 <img src="${planet.image}">`
+    });
  
 document.getElementById(addDestinationInfo).innerHTML
 document.getElementbyId(MissionDestination);
@@ -105,6 +113,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 //   }
 
  async function myFetch() {
+     
       const response = await fetch("https://handlers.education.launchcode.org/static/planets.json");
       const json = await response.json()
       console.log(json)
@@ -113,6 +122,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   }
 
 function pickPlanet(planets) { 
+    
     let index = Math.floor(Math.random()* planets.length);
     return planets[index];
 
