@@ -1,7 +1,5 @@
 // Write your JavaScript code here!
 
-const { pickPlanet, addDestinationInfo, validateInput } = require("./scriptHelper");
-
 const { formSubmission } = require("./scriptHelper");
 
 window.addEventListener("load", function () {
@@ -14,18 +12,13 @@ window.addEventListener("load", function () {
         let coPilotValue = document.querySelector("input[name=copilotName]").value;
         let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
         let cargoMassValue = document.querySelector("input[name=cargoWeight]").value;
-        let ready = true
+        
 
-        let faultyItems = document.getElementbyId("faultyItems");
-        let pilotStatus = document.getElementById("pilotStatus");
-        let fuelStatus = document.getElementById("fuelStatus");
-        let cargoStatus = document.getElementById("cargoStatus");
-        let launchStatus = document.getElementById("launchStatus");
-        let missionTarget = document.getElementById("missionTarget");
-        let list =[]
-        console.log(faultyItems);
-        console.log(pilotStatus);
+        console.log(cargoMassValue);
+        console.log(fuelLevel);
+        console.log(coPilotValue);
         console.log(missionTarget);
+        formSubmission(pilotValue)
     })
     
         
@@ -48,51 +41,22 @@ window.addEventListener("load", function () {
         document.getElementById('pilotStatus').innerHTML = `Pilot ${ pilotName + ' ' }Ready`
         document.getElementById('copilotStatus').innerHTML = `Co-pilot ${ copilotName + ' ' }Ready`
 
-        if (fuelLevel < 10000) {
-            ready = false;
-            fuelStatus.innerHTML = 'Not enough fuel for launch';
-        } else {
-            fuelStatus.innerHTML = 'Fuel level high enough for launch';
-        }
-        if (cargoMass > 10000) {
-            ready = false;
-            cargoStatus.innerHTML = 'Too much weight for the shuttle to take off';
-        } else {
-            cargoStatus.innerHTML = 'Cargo mass low enough for launch';
-        }
-
-        if (ready) {
-            launchStatus.style.color = 'green';
-            launchStatus.innerHTML = 'Shuttle is ready for launch';
-            retrieveData();
-        } else {
-            items.style.visibility = 'visible';
-            launchStatus.style.color = 'red';
-            launchStatus.innerHTML = 'Shuttle not ready for launch';
-        }
-
-    }
-    return validateInput();
-});
+      
 
 
-
-function retrieveData() {
-
-    };
     
-    
-   // let listedPlanets;
+   let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-    let listedPlanetsResponse;
+    let listedPlanetsResponse = myFetch();
     listedPlanetsResponse.then(function (result) {
         listedPlanets = result;
         console.log(listedPlanets);
+        console.log(myFetch);
     }).then(function () {
-        console.log(listedPlanets);
+        pickPlanet();
+        addDestinationInfo()}
+        formSubmission())
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-       console.log(formSubmission());
-       console.log(pickPlanet());
-       console.log(addDestinationInfo());
-    })
+       
+    }}
 
