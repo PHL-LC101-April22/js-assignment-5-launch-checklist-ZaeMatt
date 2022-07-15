@@ -2,7 +2,7 @@
 require = ('isomorphic-fetch');
 
 
-function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
+function addDestinationInfo(document, name, diameter, star, distance, moons, image) {
     // Here is the HTML formatting for our mission target div.
 
     let main = document.getElementById('missionTarget');
@@ -15,7 +15,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                      <li>Distance from Earth: ${distance} </li>
                      <li>Number of Moons: ${moons}</li>
                  </ol>
-                 <img src="${imageUrl}">`;
+                 <img src="${image}">`;
  
  
 document.getElementById(addDestinationInfo).innerHTML
@@ -25,7 +25,7 @@ document.getElementById(diameter).innerHTML;
 document.getElementById(star).innerHTML;
 document.getElementById(distance).innerHTML;
 document.getElementById(moons).innerHTML;
-document.getElementById(imageUrl).innerHTML;
+document.getElementById(image).innerHTML;
 }
 
 
@@ -48,6 +48,7 @@ function validateInput(testInput) {
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    let list = ["Tatooine", "Pern", "Saturn/Titan", "Mars", "K2-18b", "Jupiter/Europa"]
     let array = [pilot, copilot, fuelLevel, cargoLevel]
     let launchInfo = document.getElementById('launchStatus');
     if (array.includes('')) {
@@ -92,25 +93,27 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 }
 
 
- async function myFetch() {
-      let planetsReturned;
+//  async function myFetch() {
+//       let planetsReturned;
 
-    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json");
+//     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json");
     
-     return response.json();
+//     console.log(json);
+//     console.log(planetsReturned);
+//      return response.json();
     
+//   }
+
+ async function myFetch() {
+      const response = await fetch("https://handlers.education.launchcode.org/static/planets.json");
+      const json = await response.json()
+      console.log(json)
+      console.log(myFetch)
+      return response.json()
   }
 
-//  async function myFetch() {
-//      const response = await fetch("https://handlers.education.launchcode.org/static/planets.json");
-//      const json = await response.json()
-//      console.log(json)
-//      console.log(myFetch)
-//      return response.json()
-//  }
-
 function pickPlanet(planets) { 
-    let index = Math.floor(Math.random()* planets.length)
+    let index = Math.floor(Math.random()* planets.length);
     return planets[index];
 
 }
