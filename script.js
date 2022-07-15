@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-const { formSubmission, validateInput } = require("./scriptHelper");
+const { formSubmission, validateInput, pickPlanet } = require("./scriptHelper");
 
 window.addEventListener("load", function () {
     let form = document.querySelector("form");
@@ -70,8 +70,8 @@ window.addEventListener("load", function () {
         console.log(listedPlanets);
         console.log(myFetch);
     }).then(function () {
-        pickPlanet();
-        addDestinationInfo();
+        pickPlanet(index);
+        addDestinationInfo(pickPlanet);
         formSubmission();
         validateInput();
     })
