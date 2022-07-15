@@ -115,7 +115,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
  async function myFetch() {
      
-      const response = await myFetch("https://handlers.education.launchcode.org/static/planets.json");
+      const response = await fetch("https://handlers.education.launchcode.org/static/planets.json");
       const json = await response.json()
       console.log(json)
       console.log(myFetch)
