@@ -49,7 +49,7 @@ function validateInput(testInput) {
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let array = [pilot, copilot, fuelLevel, cargoLevel]
     let launchInfo = document.getElementById('launchStatus');
-    
+    let list = [];
     if (array.includes('')) {
         alert("All fields required!")
     } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number") {
