@@ -48,7 +48,7 @@ function validateInput(testInput) {
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    let list = ["Tatooine", "Pern", "Saturn/Titan", "Mars", "K2-18b", "Jupiter/Europa"]
+    //let list = ["Tatooine", "Pern", "Saturn/Titan", "Mars", "K2-18b", "Jupiter/Europa"]
     let array = [pilot, copilot, fuelLevel, cargoLevel]
     let launchInfo = document.getElementById('launchStatus');
     if (array.includes('')) {
