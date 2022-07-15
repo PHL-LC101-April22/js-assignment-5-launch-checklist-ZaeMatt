@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-const { formSubmission } = require("./scriptHelper");
+const { formSubmission, validateInput } = require("./scriptHelper");
 
 window.addEventListener("load", function () {
     let form = document.querySelector("form");
@@ -14,12 +14,9 @@ window.addEventListener("load", function () {
         let cargoMassValue = document.querySelector("input[name=cargoWeight]").value;
         
 
-        console.log(cargoMassValue);
-        console.log(fuelLevel);
-        console.log(coPilotValue);
-        console.log(missionTarget);
-        formSubmission(pilotValue)
-    })
+        
+        formSubmission(pilotValue, coPilotValue, fuelLevel, cargoMassValue);
+     } )})
     
         
     formSubmission(document, list, pilotValue, coPilotValue, fuelLevel, cargoMassValue); 
@@ -41,7 +38,7 @@ window.addEventListener("load", function () {
         document.getElementById('pilotStatus').innerHTML = `Pilot ${ pilotName + ' ' }Ready`
         document.getElementById('copilotStatus').innerHTML = `Co-pilot ${ copilotName + ' ' }Ready`
 
-      
+    }
 
 
     
@@ -54,9 +51,9 @@ window.addEventListener("load", function () {
         console.log(myFetch);
     }).then(function () {
         pickPlanet();
-        addDestinationInfo()}
-        formSubmission())
+        addDestinationInfo();
+        formSubmission();
+        validateInput();
+    })
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-       
-    }}
-
+        

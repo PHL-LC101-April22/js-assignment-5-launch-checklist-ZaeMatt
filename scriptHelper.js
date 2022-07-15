@@ -43,13 +43,12 @@ function validateInput(testInput) {
     } else return "Is a Number";
 
 })
-
+}
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let array = [pilot, copilot, fuelLevel, cargoLevel]
     let launchInfo = document.getElementById('launchStatus');
-    let list = [];
     if (array.includes('')) {
         alert("All fields required!")
     } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number") {
@@ -86,8 +85,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         launchInfo.innerHTML = "Shuttle is ready for launch";
         launchInfo.style.color = 'green';
     }
-}
-return formSubmission(visible); {
+
+    return formSubmission(visible); 
 
 }
 
@@ -114,7 +113,7 @@ function pickPlanet(planets) {
     return planets[index];
 }
     
-}
+
 
 module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
