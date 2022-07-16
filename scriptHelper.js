@@ -102,25 +102,36 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 }
 
 
-//  async function myFetch() {
-//       let planetsReturned;
+  async function myFetch() {
+       let planetsReturned;
 
-//     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json");
-    
-//     console.log(json);
-//     console.log(planetsReturned);
-//      return response.json();
-    
-//   }
-
- async function myFetch() {
+     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
      
-      const response = await fetch("https://handlers.education.launchcode.org/static/planets.json");
-      const json = await response.json()
-      console.log(json)
-    //   console.log(myFetch)
+     if (!response) {
+         throw new Error('Error: Bad Request. Try Again.')
+     } else {
+    
       return response.json()
+    
   }
+});
+
+return planetsReturned;
+
+}
+
+
+//  async function myFetch() {
+     
+//     const response = await fetch("https://handlers.education.launchcode.org/static/planets.json");
+//     const json = await response.json();
+//       console.log(json);
+//       console.log(myFetch);
+//       return response.json();
+//   }
+  
+//   return planetsR
+  
 
 function pickPlanet(planets) { 
     
