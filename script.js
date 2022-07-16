@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-//const { formSubmission, validateInput, pickPlanet} = require("./scriptHelper");
+const { formSubmission, pickPlanet} = require("./scriptHelper");
 
 window.addEventListener("load", function() {
     
