@@ -31,10 +31,10 @@ window.addEventListener("load", function() {
         let copilotValue = copilot.value;
         let fuelLevel = document.querySelector("input[name=fuelLevel]");
         let fuelLevelValue = fuelLevel.value;
-        let cargoMass = document.querySelector("input[name=cargoMass]");
-        let cargoMassValue = cargoMass.value;
+        let cargoLevel = document.querySelector("input[name=cargoLevel]");
+        let cargoLevelValue = cargoLevel;
         let list = document.getElementById("faultyItems");
-        formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue, cargoMassValue);
+        formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue, cargoLevelValue);
     });
         
 });
